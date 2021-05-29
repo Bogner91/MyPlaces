@@ -9,9 +9,9 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
-    let restaurantNames = ["KFC", "Macdonald", "Okidoki", "ДавайЛама", "Чифань", "Hesburger",
-                   "BRUGGE PUB", "Хлопок", "Zuma", "Дело в мясе", "Syndicate",
-                   "Ханс", "Супра", "Drinks&Burgers", "Tokyo Home"]
+    let restaurantNames = ["Балкан Гриль", "X.O", "Speak Easy", "Sherlock Holmes", "Morris Pub", "Love&Life",
+                   "Kitchen", "Burger Heroes", "Bonsai", "Шок", "Классик",
+                   "Индокитай", "Дастархан", "Вкусные истории", "Бочка"]
 
     override func viewDidLoad() {
     }
@@ -27,8 +27,16 @@ class MainViewController: UITableViewController {
 
         cell.textLabel?.text = restaurantNames[indexPath.row]
         cell.imageView?.image = UIImage(named: restaurantNames[indexPath.row])
+        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
+        cell.imageView?.clipsToBounds = true
         return cell
     }
+    //MARK: - Table view delegate
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
+    }
+
     /*
     // MARK: - Navigation
 
